@@ -1,0 +1,22 @@
+Create table tblHelpText
+(
+     HelpTextKey nvarchar(50) primary key,
+     HelpText nvarchar(250)
+)
+GO
+
+Insert into tblHelpText values('firstName','Your fisrt name as it appears in passport')
+Insert into tblHelpText values('lastName','Your last name as it appears in passport')
+Insert into tblHelpText values('email','Your email address for communication')
+Insert into tblHelpText values('income','Your annual income')
+
+Create stored procedure:-
+
+Create procedure spGetHelpTextByKey
+@HelpTextKey nvarchar(50)
+as
+Begin
+     Select HelpText from tblHelpText where HelpTextKey=@HelpTextKey
+End
+
+select
